@@ -12,6 +12,101 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Futbol Real</h1>
+      <p>Where real futbol fans live!</p>
+      <p id="message"></p>
+
+      <section>
+        <form id="login">
+          <h2>Log In</h2>
+          <input type="text" name="credentials[email]" placeholder="email" required>
+          <input type="password" name="credentials[password]" placeholder="password" required>
+          <button type="submit">login</button>
+        </form>
+        <form id="sign-up">
+          <h2>Sign Up</h2>
+          <input type="text" name="credentials[email]" placeholder="email" required>
+          <input type="password" name="credentials[password]" placeholder="password" required>
+          <input type="password" name="credentials[password_confirmation]" placeholder="password" required>
+          <button type="submit">sign up</button>
+        </form>
+      </section>
+
+      <section>
+        <form id="change-password">
+          <h2>Change Password</h2>
+          <input type="password" name="passwords[old]" placeholder="old password" required>
+          <input type="password" name="passwords[new]" placeholder="new password" required>
+          <button type="submit">submit</button>
+        </form>
+      </section>
+
+      <section>
+        <button type="submit" id="log-out">LOG OUT</button>
+      </section>
+
+      <section>
+        <h2>Create Team</h2>
+        <form id="team-create">
+          <label for="teamName">Team Name</label><br>
+          <input type="text" name="team[name]" required><br>
+
+          <label for="league">League</label><br>
+          <input type="text" name="team[league]" required><br>
+
+          <label for="city">City Located</label><br>
+          <input type="text" name="team[city]" required><br>
+
+          <button type="submit">Submit</button>
+        </form>
+
+        <div>
+          <button type="submit" id="show-team">Show Team</button>
+          <input type="text" name="team[_id]" required>
+          <button type="click" id="index">Index</button>
+        </div>
+
+        <form id="update-team">
+          <h2>Update Team</h2>
+          <label for="teamName">Team Name</label><br>
+          <input type="text" name="team[name]" required><br>
+
+          <label for="league">League</label><br>
+          <input type="text" name="team[league]" required><br>
+
+          <label for="city">City Located</label><br>
+          <input type="text" name="team[city]" required><br>
+
+          <label for='id'>Your ID</label><br>
+          <input type="text" name="team[id]" required><br>
+
+          <button type="submit" >Update</button>
+        </form>
+
+          <p id="fav-team"></p>
+        </form>
+      </section>
+
+
+      <!-- <section>
+        <form>
+          <label for="Teams">Choose your team:</label>
+          <select>
+            <option value="Real Madrid">Real Madrid</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Atletico Madrid">Atletico Madrid</option>
+            <option value="Sevilla">Sevilla</option>
+            <option value="Getafe">Getafe</option>
+            <option value="Villa Real">Villa Real</option>
+            <option value="Real Sociedad">Real Sociedad</option>
+            <option value="Valencia">Valencia</option>
+            <option value="Atletic Club Bilbao">Atletic Club Bilbao</option>
+            <option value="Granada">Granada</option>
+          </select>
+          <input type="submit">
+        </form>
+      </section> -->
+
+
     </body>
 </html>
