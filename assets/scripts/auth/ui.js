@@ -41,7 +41,7 @@ const onChangePasswordFailure = function () {
 }
 
 const onLogOutSuccess = function () {
-  $('#message').fadeOut(8000).text('Logged out, SEE YOU SOON!')
+  $('#message3').show().fadeOut(8000).text('Logged out, SEE YOU SOON!').css('color', 'white').css('background', 'black')
   $('#webdata').hide()
   $('#auth-forms').show()
   $('#change-password').hide()
