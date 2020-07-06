@@ -5,7 +5,7 @@
 An app for the intense soccer fan.
 
 ## Important Links
-- [Project Repo]
+- [Project Repo] https://github.com/malcar91/fullStackSoccerProject-client
 - [Deployed Site]
 
 ## Planning Story
