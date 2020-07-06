@@ -1,50 +1,71 @@
 const store = require('./../store')
 
-const onSignUpSuccess = function () {
-  $('#message').text('Sign Up succesful, now log in please!')
+const onSignUpSuccess = function (response) {
+  console.log('Welcome ' + response.user.email + ', now login to get in!')
+  $('#message').text('Welcome ' + response.user.email + ', now login to get in!')
+  $('#sign-up').hide()
+  $('#login').show()
   $('form').trigger('reset')
 }
 
 const onSignUpFailure = function () {
-  $('#message').text('Sign Up failed, try again please')
+  $('#message2').text('Sign Up failed, try again please')
 }
 
 const onLoginSuccess = function (response) {
   console.log(response.user)
-  $('#message').text('Logged In, WELCOME!')
+  $('#message3').fadeOut(5000).text('Logged in succesfully!').css('color', 'white')
+  $('#auth-forms').hide()
+  $('#log-out').show()
+  $('#chng-pwd').show()
+  $('#web-data').show()
   $('form').trigger('reset')
   store.user = response.user
   // store.user.token = response.user
 }
 
 const onLoginFailure = function () {
-  $('#message').text('WHOOPS, that did not work, try again!')
+  $('#message').fadeOut(5000).text('WHOOPS, that did not work, try again!')
 }
 
 const onChangePasswordSuccess = function () {
-  $('#message').text('Password changed SUCCESSFULLY!')
+  $('#message3').show().fadeOut(5000).text('Password changed SUCCESSFULLY!').css('color', 'white')
+  $('#change-password').hide()
+  $('#fillout-forms').show()
   $('form').trigger('reset')
 }
 
 const onChangePasswordFailure = function () {
-  $('#message').text('You did not change password succesfully')
+  $('#message4').fadeOut(3000).text('You did not change password succesfully')
   $('form').trigger('reset')
 }
 
 const onLogOutSuccess = function () {
-  $('#message').text('Logged out, SEE YOU SOON!')
+  $('#message').fadeOut(8000).text('Logged out, SEE YOU SOON!')
+  $('#webdata').hide()
+  $('#auth-forms').show()
+  $('#change-password').hide()
+  $('#fillout-forms').hide()
+  $('#chng-pwd').hide()
+  $('#log-out').hide()
   $('form').trigger('reset')
 }
 
 const onTeamCreateSuccess = function (response) {
   console.log(response.team)
-  $('#message').text(`${response.team.name}, ${response.team.league}, ${response.team.city}`)
+  $('#fav-team').text(`${response.team.name}, ${response.team.league}, ${response.team.city}, ${response.team._id}`).css('color', 'white')
+  // const teamHtml = (`
+  //   <p>Team: ${response.team.name}</p>
+  //   <p>League: ${response.team.league}</p>
+  //   <p>City: ${response.team.city}</p>
+  //   <p>Team ID: ${response.team._id}</p>
+  //   `)
   $('form').trigger('reset')
   store.team = response.team
 }
 
 const onTeamCreateFailure = function () {
-  $('#message').text('Did not create team!')
+  $('#message5').text('Did not create team!')
   $('form').trigger('reset')
 }
 
@@ -69,7 +90,7 @@ const onIndexFailure = function () {
 }
 
 const onUpdateTeamSuccess = function (response) {
-  console.log(response)
+  console.log(response.team)
   // $('#message').text('TEAM UPDATED')
   // $('#fav-team').text(`${response.team.name}, ${response.team.league}, ${response.team.city}, ${response.team._id}`)
 }

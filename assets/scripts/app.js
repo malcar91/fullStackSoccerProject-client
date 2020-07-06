@@ -17,4 +17,36 @@ $(() => {
   $('#show-team').on('click', futbolApp.onShowTeam)
   $('#update-team').on('submit', futbolApp.onUpdateTeam)
   $('#index').on('click', futbolApp.onIndex)
+
+  $('#sign-up').hide()
+  $('#sign-link').click(function () {
+    $('#sign-up').show()
+    $('#login').hide()
+  })
+
+  $('#log-out').hide()
+  $('#change-password').hide()
+  $('#chng-pwd').hide()
+  $('#web-data').hide()
+
+  $('#chng-pwd').click(function () {
+    $('#change-password').show()
+    $('#fillout-forms').hide()
+  })
+
+  $('.update-form').hide()
+  $('.update-team').css('background', 'none')
+
+  $('.update-team').click(function () {
+    $('.create-form').hide()
+    $('.update-form').show()
+    $('.create-team').css('background', 'none')
+    $('.update-team').css('background', '#f1f1f1')
+  })
+  $('.create-team').click(function () {
+    $('.update-form').hide()
+    $('.create-form').show()
+    $('.update-team').css('background', 'none')
+    $('.create-team').css('background', '#f1f1f1')
+  })
 })

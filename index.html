@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Futbol Real</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -10,82 +10,116 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+      <!-- <a href="https://imgur.com/GVv76xP">View post on imgur.com</a>
+      <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> -->
+
     </head>
     <body>
-      <h1>Futbol Real</h1>
-      <p>Where real futbol fans live!</p>
-      <p id="message"></p>
+      <!-- <img src="public/images/soccerBall2.jpg" alt="soccer ball background"> -->
 
-      <section>
-        <form id="login">
+      <header>
+        <h1>Futbol Real</h1>
+        <p>Where real futbol fans live!</p>
+        <button class="header-btn" type="submit" id="log-out">LOG OUT</button>
+        <button class="header-btn" type="click" id="chng-pwd">Change Password</button>
+      </header>
+      <p id="message3"></p>
+      <p id="fav-team"></p>
+
+      <section id="auth-forms">
+        <form class="login-form auth-forms" action="index.html" id="login">
+          <p id="message"></p>
           <h2>Log In</h2>
-          <input type="text" name="credentials[email]" placeholder="email" required>
-          <input type="password" name="credentials[password]" placeholder="password" required>
-          <button type="submit">login</button>
+
+          <div class="txtb">
+            <input type="text" name="credentials[email]" placeholder="email" required>
+          </div>
+          <div class="txtb">
+            <input type="password" name="credentials[password]" placeholder="password" required>
+          </div>
+
+          <button class="logbtn" type="submit">login</button>
+
+          <div class="bottom-text">
+            Don't have an account? <button class="sign-link" id="sign-link" type="click">Sign Up</button>
+          </div>
         </form>
-        <form id="sign-up">
+
+        <form class="signup-form" action="index.html" id="sign-up">
+          <p id="message2"></p>
           <h2>Sign Up</h2>
-          <input type="text" name="credentials[email]" placeholder="email" required>
-          <input type="password" name="credentials[password]" placeholder="password" required>
-          <input type="password" name="credentials[password_confirmation]" placeholder="password" required>
-          <button type="submit">sign up</button>
+          <div class="txtb">
+            <input type="text" name="credentials[email]" placeholder="email" required>
+          </div>
+          <div class="txtb">
+            <input type="password" name="credentials[password]" placeholder="password" required>
+          </div>
+          <div class="txtb">
+            <input type="password" name="credentials[password_confirmation]" placeholder="password" required>
+          </div>
+
+          <button class="signbtn" type="submit">sign up</button>
         </form>
       </section>
 
-      <section>
-        <form id="change-password">
-          <h2>Change Password</h2>
-          <input type="password" name="passwords[old]" placeholder="old password" required>
-          <input type="password" name="passwords[new]" placeholder="new password" required>
-          <button type="submit">submit</button>
-        </form>
-      </section>
+      <div id="web-data" class="web-data">
+        <!-- <section> -->
+          <form class="change-password" id="change-password">
+            <p id="message4"></p>
+            <h2>Change Password</h2>
 
-      <section>
-        <button type="submit" id="log-out">LOG OUT</button>
-      </section>
+            <div class="txtb">
+              <input type="password" name="passwords[old]" placeholder="old password" required>
+            </div>
+            <div class="txtb">
+              <input type="password" name="passwords[new]" placeholder="new password" required>
+            </div>
 
-      <section>
-        <h2>Create Team</h2>
-        <form id="team-create">
-          <label for="teamName">Team Name</label><br>
-          <input type="text" name="team[name]" required><br>
+            <button class="pwdbtn" type="submit">submit</button>
+          </form>
+        <!-- </section> -->
 
-          <label for="league">League</label><br>
-          <input type="text" name="team[league]" required><br>
+        <section id="fillout-forms">
+          <div class="wrapper">
+            <div class="container">
 
-          <label for="city">City Located</label><br>
-          <input type="text" name="team[city]" required><br>
+              <div class="create-team">Create Team</div>
+              <div class="update-team">Update Team</div>
 
-          <button type="submit">Submit</button>
-        </form>
+              <div class="create-form">
+                <form id="team-create">
+                  <input class="input" type="text" name="team[name]" placeholder="Team Name" required><br>
+                  <input class="input" type="text" name="team[league]" placeholder="League" required><br>
+                  <input class="input" type="text" name="team[city]" placeholder="City Located" required><br>
+                  <button class="btn" type="submit">Submit</button>
+                  <p id="message5"></p>
+                </form>
+              </div>
 
-        <div>
-          <button type="submit" id="show-team">Show Team</button>
-          <input type="text" name="team[_id]" required>
-          <button type="click" id="index">Index</button>
-        </div>
+              <div class="update-form">
+                <form id="update-team">
+                  <input class="input" type="text" name="team[name]" placeholder="Team Name" required><br>
+                  <input class="input" type="text" name="team[league]" placeholder="League" required><br>
+                  <input class="input" type="text" name="team[city]"
+                  placeholder="City Located" required><br>
+                  <input class="input" type="text" name="team[id]" placeholder="Your Team ID" required><br>
+                  <button class="btn" type="submit">Update</button>
+                </form>
+              </div>
+            </div>
+          </div>
 
-        <form id="update-team">
-          <h2>Update Team</h2>
-          <label for="teamName">Team Name</label><br>
-          <input type="text" name="team[name]" required><br>
+          <!-- <div>
+            <button type="submit" id="show-team">Show Team</button>
+            <input type="text" name="team[_id]" required>
+            <button type="click" id="index">Index</button>
+          </div> -->
 
-          <label for="league">League</label><br>
-          <input type="text" name="team[league]" required><br>
-
-          <label for="city">City Located</label><br>
-          <input type="text" name="team[city]" required><br>
-
-          <label for='id'>Your ID</label><br>
-          <input type="text" name="team[id]" required><br>
-
-          <button type="submit" >Update</button>
-        </form>
-
-          <p id="fav-team"></p>
-        </form>
-      </section>
+        </section>
+      </div>
 
 
       <!-- <section>

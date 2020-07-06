@@ -95,7 +95,7 @@ const index = function () {
 }
 
 const updateTeam = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/teams/' + data.team.id,
     method: 'PATCH',

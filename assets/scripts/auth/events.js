@@ -67,6 +67,8 @@ const onUpdateTeam = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
+  // const id = data.team._id
+
   api.updateTeam(data)
     .then(ui.onUpdateTeamSuccess)
     .catch(ui.onUpdateTeamFailure)
