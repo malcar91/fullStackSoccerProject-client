@@ -14,7 +14,7 @@ const onSignUpFailure = function () {
 
 const onLoginSuccess = function (response) {
   console.log(response.user)
-  $('#message3').fadeOut(5000).text('Logged in succesfully!').css('color', 'white')
+  $('#message3').fadeOut(8000).text('Logged in succesfully!').css('color', 'white').css('background', 'black')
   $('#auth-forms').hide()
   $('#log-out').show()
   $('#chng-pwd').show()
@@ -29,14 +29,14 @@ const onLoginFailure = function () {
 }
 
 const onChangePasswordSuccess = function () {
-  $('#message3').show().fadeOut(5000).text('Password changed SUCCESSFULLY!').css('color', 'white')
+  $('#message3').show().fadeOut(5000).text('Password changed SUCCESSFULLY!').css('color', 'white').css('background', 'black')
   $('#change-password').hide()
   $('#fillout-forms').show()
   $('form').trigger('reset')
 }
 
 const onChangePasswordFailure = function () {
-  $('#message4').fadeOut(3000).text('You did not change password succesfully')
+  $('#message4').fadeOut(3000).text('You did not change password successfully')
   $('form').trigger('reset')
 }
 
@@ -53,7 +53,7 @@ const onLogOutSuccess = function () {
 
 const onTeamCreateSuccess = function (response) {
   console.log(response.team)
-  $('#fav-team').text(`${response.team.name}, ${response.team.league}, ${response.team.city}, ${response.team._id}`).css('color', 'white')
+  $('#fav-team').show().fadeOut(10000).text(`${response.team.name}, ${response.team.league}, ${response.team.city}, ${response.team._id}`).css('color', 'white').css('background', 'black')
   // const teamHtml = (`
   //   <p>Team: ${response.team.name}</p>
   //   <p>League: ${response.team.league}</p>

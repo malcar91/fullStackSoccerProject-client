@@ -23,14 +23,16 @@
       <header>
         <h1>Futbol Real</h1>
         <p>Where real futbol fans live!</p>
-        <button class="header-btn" type="submit" id="log-out">LOG OUT</button>
-        <button class="header-btn" type="click" id="chng-pwd">Change Password</button>
+        <div class="header-bar">
+          <button class="header-btn" type="submit" id="log-out">LOG OUT</button>
+          <button class="header-btn" type="click" id="chng-pwd">My Account</button>
+        </div>
       </header>
       <p id="message3"></p>
       <p id="fav-team"></p>
 
       <section id="auth-forms">
-        <form class="login-form auth-forms" action="index.html" id="login">
+        <form class="login-form" action="index.html" id="login">
           <p id="message"></p>
           <h2>Log In</h2>
 
@@ -40,7 +42,6 @@
           <div class="txtb">
             <input type="password" name="credentials[password]" placeholder="password" required>
           </div>
-
           <button class="logbtn" type="submit">login</button>
 
           <div class="bottom-text">

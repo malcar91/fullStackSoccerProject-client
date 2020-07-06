@@ -97,7 +97,7 @@ const index = function () {
 const updateTeam = function (data) {
   // console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/teams/' + data.team.id,
+    url: config.apiUrl + '/teams/' + data.team._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -106,7 +106,8 @@ const updateTeam = function (data) {
       team: {
         name: data.team.name,
         league: data.team.league,
-        city: data.team.city
+        city: data.team.city,
+        _id: data.team._id
       }
     }
   })
