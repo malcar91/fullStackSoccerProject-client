@@ -5,8 +5,10 @@
 An app for the intense soccer fan.
 
 ## Important Links
-- [Project Repo] https://github.com/malcar91/fullStackSoccerProject-client
-- [Deployed Site] https://malcar91.github.io/fullStackSoccerProject-client/
+- [Client Repo] https://github.com/malcar91/fullStackSoccerProject-client
+- [Client Deployed] https://malcar91.github.io/fullStackSoccerProject-client/
+- [API Repo] https://github.com/malcar91/fullStackSoccerProject-client
+- [API Deployed] https://boiling-woodland-54778.herokuapp.com/
 
 ## Planning Story
 I designed the wireframe to give me a good idea of the layout that I wanted to achieve. Then I started with my forms and auths, sign-in, sign-up, change-password and log out. Once those where tested and working I moved onto client user side of the site so creating an item and updating the same item. After that I would then add more functionality to the site and style.
