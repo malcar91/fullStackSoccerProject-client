@@ -23,11 +23,36 @@
       <header>
         <h1>Futbol Real</h1>
         <p>Where real futbol fans live!</p>
-        <div class="header-bar">
-          <button class="header-btn" type="submit" id="log-out">LOG OUT</button>
-          <button class="header-btn" type="click" id="chng-pwd">My Account</button>
+        <div class="header-bar menu">
+          <nav class="navbar nabar-light amber lighten-4">
+            <a class="navbar-brand" href="#">Welcome Back</a>
+            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+            aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon1"><span></span><span></span><span></span></div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a id="chng-pwd" class="nav-link" href="#">Change Password</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Create/Update Team</a>
+                </li>
+                <li>
+                  <a id="log-out" class="nav-link" href="#">Log Out</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- <button class="header-btn" type="submit" id="log-out">LOG OUT</button> -->
+          <!-- <button class="header-btn" type="click" id="chng-pwd">My Account</button> -->
         </div>
       </header>
+
       <p id="message3"></p>
       <p id="fav-team"></p>
 
@@ -113,11 +138,13 @@
             </div>
           </div>
 
-          <!-- <div>
-            <button type="submit" id="show-team">Show Team</button>
-            <input type="text" name="team[_id]" required>
-            <button type="click" id="index">Index</button>
-          </div> -->
+          <div>
+            <form>
+              <input type="text" name="team[id]" required><br>
+              <button type="submit" id="show-team">Show Team</button>
+              <button type="click" id="index">Index</button>
+            </form>
+          </div>
 
         </section>
       </div>

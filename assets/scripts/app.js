@@ -29,6 +29,12 @@ $(() => {
   $('#chng-pwd').hide()
   $('#web-data').hide()
 
+  $('.menu').ready(function () {
+    $('.first-button').on('click', function () {
+      $('.animated-icon1').toggleClass('open')
+    })
+  })
+
   $('#chng-pwd').click(function () {
     $('#change-password').show()
     $('#fillout-forms').hide()

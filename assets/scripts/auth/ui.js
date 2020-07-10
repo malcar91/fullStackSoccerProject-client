@@ -73,7 +73,7 @@ const onShowTeamSuccess = function (response) {
   console.log(response)
   $('#fav-team').text('your team')
   $('form').trigger('reset')
-  store.user = response.user
+  // store.user = response.user
 }
 
 const onShowTeamFailure = function () {
@@ -83,21 +83,26 @@ const onShowTeamFailure = function () {
 
 const onIndexSuccess = function (response) {
   console.log(response)
-  $('#fav-team').text(`${response.teams}`)
+  $('#fav-team').text(`${response.team.name}, ${response.team._id}`)
 }
 const onIndexFailure = function () {
   console.log('unable to pull up')
 }
 
-const onUpdateTeamSuccess = function (response) {
-  console.log(response.team)
+const onUpdateTeamSuccess = function (data) {
+  // console.log(response)
   // $('#message').text('TEAM UPDATED')
-  // $('#fav-team').text(`${response.team.name}, ${response.team.league}, ${response.team.city}, ${response.team._id}`)
+  // $('#fav-team').text(`
+  //   ${data.team.name},
+  //   ${data.team.league},
+  //   ${data.team.city},
+  //   ${data.team._id}`)
+  $('#fav-team').text('Team Updated!')
 }
 
-// const onUpdateTeamFailure = function () {
-//   $('#fav-team').text('unable to update')
-// }
+const onUpdateTeamFailure = function () {
+  $('#fav-team').text('unable to update')
+}
 
 module.exports = {
   onSignUpSuccess,
@@ -114,6 +119,6 @@ module.exports = {
   onShowTeamFailure,
   onIndexSuccess,
   onIndexFailure,
-  onUpdateTeamSuccess
-  // onUpdateTeamFailure
+  onUpdateTeamSuccess,
+  onUpdateTeamFailure
 }
