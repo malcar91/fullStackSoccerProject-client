@@ -78,7 +78,7 @@ const showTeam = function () {
     url: config.apiUrl + '/teams/:id',
     method: 'GET',
     headers: {
-      Authorization: 'Bearer ' + store.team.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }

@@ -14,9 +14,10 @@ $(() => {
   $('#log-out').on('click', futbolApp.onLogOut)
 
   $('#team-create').on('submit', futbolApp.onTeamCreate)
-  $('#show-team').on('click', futbolApp.onShowTeam)
+  // $('#show-team').on('click', futbolApp.onShowTeam)
   $('#update-team').on('submit', futbolApp.onUpdateTeam)
-  $('#index').on('click', futbolApp.onIndex)
+  // $('#index').on('click', futbolApp.onIndex)
+  $('#delete-team').on('click', futbolApp.onDeleteTeam)
 
   $('#sign-up').hide()
   $('#sign-link').click(function () {
@@ -27,7 +28,10 @@ $(() => {
   $('#log-out').hide()
   $('#change-password').hide()
   $('#chng-pwd').hide()
-  $('#web-data').hide()
+  // $('#web-data').hide()
+  $('#show-index').hide()
+  $('.header-bar').hide()
+  $('#fav-table').hide()
 
   $('.menu').ready(function () {
     $('.first-button').on('click', function () {
@@ -38,6 +42,10 @@ $(() => {
   $('#chng-pwd').click(function () {
     $('#change-password').show()
     $('#fillout-forms').hide()
+  })
+  $('#fillout-forms').hide()
+  $('#form-create').click(function () {
+    $('#fillout-forms').show()
   })
 
   $('.update-form').hide()

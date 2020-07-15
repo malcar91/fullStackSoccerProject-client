@@ -12,8 +12,16 @@ h1 {
   text-align: center;
   font-size: 100px;
   color: white;
-  text-shadow: 5px 5px #888888;
+  text-shadow: 5px 5px #292828;
 }
+
+h3 {
+  text-align: center;
+  font-size: 70px;
+  color: black;
+  text-shadow: 5px 5px white;
+}
+
 
 p {
   text-align: center;
@@ -32,80 +40,80 @@ body {
 }
 
 .header-bar {
-  display: flex;
-  justify-content: space-around;
+  background: #000000;
 }
 
 .animated-icon1 {
-width: 30px;
-height: 20px;
-position: relative;
-margin: 0px;
--webkit-transform: rotate(0deg);
--moz-transform: rotate(0deg);
--o-transform: rotate(0deg);
-transform: rotate(0deg);
--webkit-transition: .5s ease-in-out;
--moz-transition: .5s ease-in-out;
--o-transition: .5s ease-in-out;
-transition: .5s ease-in-out;
-cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
 }
 
 .animated-icon1 span {
-display: block;
-position: absolute;
-height: 3px;
-width: 100%;
-border-radius: 9px;
-opacity: 1;
-left: 0;
--webkit-transform: rotate(0deg);
--moz-transform: rotate(0deg);
--o-transform: rotate(0deg);
-transform: rotate(0deg);
--webkit-transition: .25s ease-in-out;
--moz-transition: .25s ease-in-out;
--o-transition: .25s ease-in-out;
-transition: .25s ease-in-out;
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
 
 .animated-icon1 span {
-background: #e65100;
+  background: #8ded6b;
 }
 
 .animated-icon1 span:nth-child(1) {
-top: 0px;
+  top: 0px;
 }
 
 .animated-icon1 span:nth-child(2) {
-top: 10px;
+  top: 10px;
 }
 
 .animated-icon1 span:nth-child(3) {
-top: 20px;
+  top: 20px;
 }
 
 .animated-icon1.open span:nth-child(1) {
-top: 11px;
--webkit-transform: rotate(135deg);
--moz-transform: rotate(135deg);
--o-transform: rotate(135deg);
-transform: rotate(135deg);
+  top: 11px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .animated-icon1.open span:nth-child(2) {
-opacity: 0;
-left: -60px;
+  opacity: 0;
+  left: -60px;
 }
 
 .animated-icon1.open span:nth-child(3) {
-top: 11px;
--webkit-transform: rotate(-135deg);
--moz-transform: rotate(-135deg);
--o-transform: rotate(-135deg);
-transform: rotate(-135deg);
+  top: 11px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
+
 
 .login-form {
   width: 360px;
@@ -138,7 +146,7 @@ transform: rotate(-135deg);
   background: #f1f1f1;
   height: 500px;
   padding: 80px 40px;
-  margin: 115px 0 0 0;
+  margin: 275px 0 0 0;
   border-radius: 10px;
   position: absolute;
   left: 50%;
@@ -324,4 +332,23 @@ transform: rotate(-135deg);
 
 .input:focus{
   border: 2px solid #34b3a0;
+}
+
+table {
+  // font-family: arial, sans-serif;
+  background: #000000;
+  color: white;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid white;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+  color: black;
 }

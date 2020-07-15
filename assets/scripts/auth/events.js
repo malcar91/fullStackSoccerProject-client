@@ -9,7 +9,6 @@ const onSignUp = function (event) {
 
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
 
   api.signUp(data)
     .then(ui.onSignUpSuccess)
@@ -55,31 +54,39 @@ const onTeamCreate = function (event) {
     .catch(ui.onTeamCreateFailure)
 }
 
-const onShowTeam = function (event) {
-  event.preventDefault()
+// const onTeamTable = function () {
+//   event.preventDefault()
+//
+// }
 
-  api.showTeam()
-    .then(ui.onShowTeamSuccess)
-    .catch(ui.onShowTeamFailure)
-}
+// const onShowTeam = function (event) {
+//   event.preventDefault()
+//
+//   api.showTeam()
+//     .then(ui.onShowTeamSuccess)
+//     .catch(ui.onShowTeamFailure)
+// }
 
 const onUpdateTeam = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  // const id = data.team._id
 
   api.updateTeam(data)
     .then(ui.onUpdateTeamSuccess)
     .catch(ui.onUpdateTeamFailure)
 }
 
-const onIndex = function (event) {
-  event.preventDefault()
+// const onIndex = function (event) {
+//   event.preventDefault()
+//
+//   api.index()
+//     .then(ui.onIndexSuccess)
+//     .catch(ui.onIndexFailure)
+// }
 
-  api.index()
-    .then(ui.onIndexSuccess)
-    .catch(ui.onIndexFailure)
+const onDeleteTeam = function () {
+  event.preventDefault()
 }
 
 module.exports = {
@@ -88,7 +95,6 @@ module.exports = {
   onChangePassword,
   onLogOut,
   onTeamCreate,
-  onShowTeam,
-  onIndex,
-  onUpdateTeam
+  onUpdateTeam,
+  onDeleteTeam
 }

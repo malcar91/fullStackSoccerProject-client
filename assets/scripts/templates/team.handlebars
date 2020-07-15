@@ -1,0 +1,22 @@
+{{#each teams as |team|}}
+  {{log team}}
+    <h3>Name</h3>
+    <p>
+      {{#if team.name}}
+        {{team.name}}
+      {{/if}}
+    </p>
+    <h3>League</h3>
+    <p>
+      {{#if team.league}}
+        {{team.league}}
+      {{/if}}
+    </p>
+    <h3>City</h3>
+      <p>
+        {{#if team.city}}
+          {{team.city}}
+        {{/if}}
+      </p>
+
+  {{/each}}

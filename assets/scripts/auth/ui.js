@@ -1,7 +1,6 @@
 const store = require('./../store')
 
 const onSignUpSuccess = function (response) {
-  console.log('Welcome ' + response.user.email + ', now login to get in!')
   $('#message').text('Welcome ' + response.user.email + ', now login to get in!')
   $('#sign-up').hide()
   $('#login').show()
@@ -13,15 +12,15 @@ const onSignUpFailure = function () {
 }
 
 const onLoginSuccess = function (response) {
-  console.log(response.user)
   $('#message3').fadeOut(8000).text('Logged in succesfully!').css('color', 'white').css('background', 'black')
   $('#auth-forms').hide()
   $('#log-out').show()
   $('#chng-pwd').show()
-  $('#web-data').show()
+  $('#show-index').show()
+  $('.header-bar').show()
+  $('#fav-table').show()
   $('form').trigger('reset')
   store.user = response.user
-  // store.user.token = response.user
 }
 
 const onLoginFailure = function () {
@@ -31,7 +30,7 @@ const onLoginFailure = function () {
 const onChangePasswordSuccess = function () {
   $('#message3').show().fadeOut(5000).text('Password changed SUCCESSFULLY!').css('color', 'white').css('background', 'black')
   $('#change-password').hide()
-  $('#fillout-forms').show()
+  // $('#fillout-forms').show()
   $('form').trigger('reset')
 }
 
@@ -41,25 +40,23 @@ const onChangePasswordFailure = function () {
 }
 
 const onLogOutSuccess = function () {
-  $('#message3').show().fadeOut(8000).text('Logged out, SEE YOU SOON!').css('color', 'white').css('background', 'black')
+  $('#message').show().fadeOut(8000).text('Logged out, SEE YOU SOON!').css('color', 'white').css('background', 'black')
   $('#webdata').hide()
   $('#auth-forms').show()
   $('#change-password').hide()
   $('#fillout-forms').hide()
   $('#chng-pwd').hide()
   $('#log-out').hide()
+  $('.header-bar').hide()
   $('form').trigger('reset')
 }
 
 const onTeamCreateSuccess = function (response) {
-  console.log(response.team)
-  $('#fav-team').show().fadeOut(10000).text(`${response.team.name}, ${response.team.league}, ${response.team.city}, ${response.team._id}`).css('color', 'white').css('background', 'black')
-  // const teamHtml = (`
-  //   <p>Team: ${response.team.name}</p>
-  //   <p>League: ${response.team.league}</p>
-  //   <p>City: ${response.team.city}</p>
-  //   <p>Team ID: ${response.team._id}</p>
-  //   `)
+  $('#message5').show().fadeOut(5000).text('Team created check below!')
+  $('#t-name').text(`${response.team.name}`)
+  $('#t-league').text(`${response.team.league}`)
+  $('#t-city').text(`${response.team.city}`)
+  $('#t-id').text(`${response.team._id}`)
   $('form').trigger('reset')
   store.team = response.team
 }
@@ -69,35 +66,30 @@ const onTeamCreateFailure = function () {
   $('form').trigger('reset')
 }
 
-const onShowTeamSuccess = function (response) {
-  console.log(response)
-  $('#fav-team').text('your team')
-  $('form').trigger('reset')
-  // store.user = response.user
-}
-
-const onShowTeamFailure = function () {
-  $('#fav-team').text('Unable to pull up fav team')
-  $('form').trigger('reset')
-}
-
-const onIndexSuccess = function (response) {
-  console.log(response)
-  $('#fav-team').text(`${response.team.name}, ${response.team._id}`)
-}
-const onIndexFailure = function () {
-  console.log('unable to pull up')
-}
+// const onShowTeamSuccess = function (data) {
+//   console.log(data)
+//   store.team = data.team
+// }
+//
+// const onShowTeamFailure = function () {
+//   $('#fav-team').text('Unable to pull up fav team')
+//   $('form').trigger('reset')
+// }
+//
+// const onIndexSuccess = function (response) {
+//   console.log(response)
+//   $('#fav-team').text(`${response.team.name}, ${response.team._id}`)
+// }
+// const onIndexFailure = function () {
+//   console.log('unable to pull up')
+// }
 
 const onUpdateTeamSuccess = function (data) {
-  // console.log(response)
-  // $('#message').text('TEAM UPDATED')
-  // $('#fav-team').text(`
-  //   ${data.team.name},
-  //   ${data.team.league},
-  //   ${data.team.city},
-  //   ${data.team._id}`)
-  $('#fav-team').text('Team Updated!')
+  // $('#t-name').text(`${team.name}`)
+  // $('#t-league').text(`${team.league}`)
+  // $('#t-city').text(`${team.city}`)
+  // $('#t-id').text(`${team._id}`)
+  $('#updated-team').show().fadeOut(5000).text('Team updated!')
 }
 
 const onUpdateTeamFailure = function () {
@@ -115,10 +107,6 @@ module.exports = {
   store,
   onTeamCreateSuccess,
   onTeamCreateFailure,
-  onShowTeamSuccess,
-  onShowTeamFailure,
-  onIndexSuccess,
-  onIndexFailure,
   onUpdateTeamSuccess,
   onUpdateTeamFailure
 }
