@@ -48,6 +48,7 @@ const onLogOutSuccess = function () {
   $('#chng-pwd').hide()
   $('#log-out').hide()
   $('.header-bar').hide()
+  $('#fav-table').hide()
   $('form').trigger('reset')
 }
 

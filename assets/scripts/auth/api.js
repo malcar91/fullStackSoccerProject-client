@@ -2,7 +2,7 @@ const config = require('./../config')
 const store = require('./../store.js')
 
 const signUp = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -56,7 +56,7 @@ const logOut = function (formData) {
 }
 
 const teamCreate = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/teams',
     method: 'POST',
